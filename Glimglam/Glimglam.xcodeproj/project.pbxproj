@@ -19,6 +19,10 @@
 		8BB286891F8F893000C8A90E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB286881F8F893000C8A90E /* InterfaceController.swift */; };
 		8BB2868B1F8F893000C8A90E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */; };
 		8BB2868D1F8F893000C8A90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2868C1F8F893000C8A90E /* Assets.xcassets */; };
+		8BB286A51F8F8A2B00C8A90E /* GlimglamCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB286A31F8F8A2B00C8A90E /* GlimglamCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BB286A81F8F8A2B00C8A90E /* GlimglamCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */; };
+		8BB286A91F8F8A2B00C8A90E /* GlimglamCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8BB286AE1F8F8AEB00C8A90E /* GlimglamCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8BB286821F8F893000C8A90E;
 			remoteInfo = "Glimglam WatchKit Extension";
+		};
+		8BB286A61F8F8A2B00C8A90E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BB2865A1F8F893000C8A90E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BB286A01F8F8A2B00C8A90E;
+			remoteInfo = GlimglamCore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,6 +72,17 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB286AD1F8F8A2B00C8A90E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8BB286A91F8F8A2B00C8A90E /* GlimglamCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +102,9 @@
 		8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		8BB2868C1F8F893000C8A90E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB2868E1F8F893000C8A90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlimglamCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB286A31F8F8A2B00C8A90E /* GlimglamCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlimglamCore.h; sourceTree = "<group>"; };
+		8BB286A41F8F8A2B00C8A90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +112,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB286AE1F8F8AEB00C8A90E /* GlimglamCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8BB286801F8F893000C8A90E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB286A81F8F8A2B00C8A90E /* GlimglamCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BB2869D1F8F8A2B00C8A90E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,6 +140,7 @@
 				8BB286641F8F893000C8A90E /* Glimglam */,
 				8BB286781F8F893000C8A90E /* Glimglam WatchKit App */,
 				8BB286871F8F893000C8A90E /* Glimglam WatchKit Extension */,
+				8BB286A21F8F8A2B00C8A90E /* GlimglamCore */,
 				8BB286631F8F893000C8A90E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +151,7 @@
 				8BB286621F8F893000C8A90E /* Glimglam.app */,
 				8BB286741F8F893000C8A90E /* Glimglam WatchKit App.app */,
 				8BB286831F8F893000C8A90E /* Glimglam WatchKit Extension.appex */,
+				8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,7 +190,27 @@
 			path = "Glimglam WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		8BB286A21F8F8A2B00C8A90E /* GlimglamCore */ = {
+			isa = PBXGroup;
+			children = (
+				8BB286A31F8F8A2B00C8A90E /* GlimglamCore.h */,
+				8BB286A41F8F8A2B00C8A90E /* Info.plist */,
+			);
+			path = GlimglamCore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8BB2869E1F8F8A2B00C8A90E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BB286A51F8F8A2B00C8A90E /* GlimglamCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8BB286611F8F893000C8A90E /* Glimglam */ = {
@@ -197,18 +253,39 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BB286911F8F893000C8A90E /* Build configuration list for PBXNativeTarget "Glimglam WatchKit Extension" */;
 			buildPhases = (
+				8BB286AF1F8F8D0400C8A90E /* ShellScript */,
 				8BB2867F1F8F893000C8A90E /* Sources */,
 				8BB286801F8F893000C8A90E /* Frameworks */,
 				8BB286811F8F893000C8A90E /* Resources */,
+				8BB286AD1F8F8A2B00C8A90E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8BB286A71F8F8A2B00C8A90E /* PBXTargetDependency */,
 			);
 			name = "Glimglam WatchKit Extension";
 			productName = "Glimglam WatchKit Extension";
 			productReference = 8BB286831F8F893000C8A90E /* Glimglam WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		8BB286A01F8F8A2B00C8A90E /* GlimglamCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BB286AA1F8F8A2B00C8A90E /* Build configuration list for PBXNativeTarget "GlimglamCore" */;
+			buildPhases = (
+				8BB2869C1F8F8A2B00C8A90E /* Sources */,
+				8BB2869D1F8F8A2B00C8A90E /* Frameworks */,
+				8BB2869E1F8F8A2B00C8A90E /* Headers */,
+				8BB2869F1F8F8A2B00C8A90E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlimglamCore;
+			productName = GlimglamCore;
+			productReference = 8BB286A11F8F8A2B00C8A90E /* GlimglamCore.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -218,7 +295,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Tyrone Trevorrow";
+				ORGANIZATIONNAME = "Marco Polee";
 				TargetAttributes = {
 					8BB286611F8F893000C8A90E = {
 						CreatedOnToolsVersion = 9.0;
@@ -229,6 +306,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					8BB286821F8F893000C8A90E = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					8BB286A01F8F8A2B00C8A90E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -250,6 +331,7 @@
 				8BB286611F8F893000C8A90E /* Glimglam */,
 				8BB286731F8F893000C8A90E /* Glimglam WatchKit App */,
 				8BB286821F8F893000C8A90E /* Glimglam WatchKit Extension */,
+				8BB286A01F8F8A2B00C8A90E /* GlimglamCore */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +364,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB2869F1F8F8A2B00C8A90E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BB286AF1F8F8D0400C8A90E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project Glimglam.xcodeproj -sdk watchsimulator -scheme GlimglamCore\nxcodebuild -project Glimglam.xcodeproj -sdk watchos -scheme GlimglamCore\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BB2865E1F8F893000C8A90E /* Sources */ = {
@@ -303,6 +408,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BB2869C1F8F8A2B00C8A90E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -315,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = 8BB286821F8F893000C8A90E /* Glimglam WatchKit Extension */;
 			targetProxy = 8BB286851F8F893000C8A90E /* PBXContainerItemProxy */;
+		};
+		8BB286A71F8F8A2B00C8A90E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BB286A01F8F8A2B00C8A90E /* GlimglamCore */;
+			targetProxy = 8BB286A61F8F8A2B00C8A90E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -557,6 +674,63 @@
 			};
 			name = Release;
 		};
+		8BB286AB1F8F8A2B00C8A90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E7NXDX263P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GlimglamCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.GlimglamCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos iphonesimulator iphoneos";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		8BB286AC1F8F8A2B00C8A90E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E7NXDX263P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GlimglamCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.GlimglamCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos iphonesimulator iphoneos";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +766,15 @@
 			buildConfigurations = (
 				8BB2869A1F8F893000C8A90E /* Debug */,
 				8BB2869B1F8F893000C8A90E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BB286AA1F8F8A2B00C8A90E /* Build configuration list for PBXNativeTarget "GlimglamCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BB286AB1F8F8A2B00C8A90E /* Debug */,
+				8BB286AC1F8F8A2B00C8A90E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
