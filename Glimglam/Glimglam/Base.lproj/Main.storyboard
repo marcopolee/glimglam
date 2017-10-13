@@ -32,14 +32,75 @@
                     <view key="view" contentMode="scaleToFill" id="fwW-qJ-nvx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qXd-tb-Qcf">
+                                <rect key="frame" x="100.5" y="264.5" width="174" height="138.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVI-yS-8R9">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not currently signed in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJo-ft-KZg">
+                                        <rect key="frame" x="0.0" y="80" width="174" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hl-rs-n5n">
+                                        <rect key="frame" x="0.0" y="108.5" width="174" height="30"/>
+                                        <state key="normal" title="Sign into GitLab"/>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="L62-5E-LWG" eventType="touchUpInside" id="TO6-Df-H5t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="maB-9R-vx5">
+                                <rect key="frame" x="135" y="264" width="105" height="138.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q82-uV-wKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0K-0A-94H">
+                                        <rect key="frame" x="0.0" y="80" width="105" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5G-in-A3J">
+                                        <rect key="frame" x="0.0" y="108.5" width="105" height="30"/>
+                                        <state key="normal" title="Choose Project"/>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="L62-5E-LWG" eventType="touchUpInside" id="5oC-rq-2Sg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="wRu-5U-J8x"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qXd-tb-Qcf" firstAttribute="centerY" secondItem="fwW-qJ-nvx" secondAttribute="centerY" id="CXH-HK-EqI"/>
+                            <constraint firstItem="maB-9R-vx5" firstAttribute="centerY" secondItem="fwW-qJ-nvx" secondAttribute="centerY" id="INH-yp-GPy"/>
+                            <constraint firstItem="qXd-tb-Qcf" firstAttribute="centerX" secondItem="fwW-qJ-nvx" secondAttribute="centerX" id="fnB-9C-A2y"/>
+                            <constraint firstItem="maB-9R-vx5" firstAttribute="centerX" secondItem="fwW-qJ-nvx" secondAttribute="centerX" id="k7z-ff-vhj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Fd7-uY-G2r"/>
                     </view>
                     <navigationItem key="navigationItem" id="FkK-aM-L5O"/>
+                    <connections>
+                        <outlet property="notSignedInView" destination="qXd-tb-Qcf" id="f7v-pC-7u3"/>
+                        <outlet property="signedInView" destination="maB-9R-vx5" id="zyK-3F-lQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcW-4g-N29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="34"/>
+            <point key="canvasLocation" x="648.79999999999995" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>

@@ -11,36 +11,56 @@ import GlimglamCore
 import SafariServices
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
-    
-    let state = UUID()
     var context: CoreContext!
+    var authenticator: GitLabAuthenticator?
+    
+    @IBOutlet var notSignedInView: UIStackView!
+    @IBOutlet var signedInView: UIStackView!
     
     override func viewDidAppear(_ animated: Bool) {
+        render()
+    }
+    
+    func render() {
         if context.gitLabLogin == nil {
-            startLogin()
+            // Show not signed in view
+            signedInView.isHidden = true
+            notSignedInView.isHidden = false
+        } else {
+            // ??
+            signedInView.isHidden = false
+            notSignedInView.isHidden = true
         }
+    }
+    
+    func authenticatorStateChanged() {
+        guard let auth = authenticator else {
+            return
+        }
+        switch auth.state {
+        case .Finished:
+            dismiss(animated: true)
+            print("Logged in and got token! Auth Token = \(auth.accessToken!.accessToken)")
+            print(try! JSONEncoder().encode(auth.accessToken))
+            context.gitLabLogin = auth.accessToken
+            context.storeInKeychain()
+        default:
+            break
+        }
+        render()
+    }
+    
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        let auth = GitLabAuthenticator(context: context, presenter: self, urlHandlers: AppDelegate.shared.urlHandlers)
+        auth.stateChangeHandler = { [weak self] in
+            self?.authenticatorStateChanged()
+        }
+        authenticator = auth
+        auth.startLogin()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func startLogin() {
-        let vc = SFSafariViewController(url: authorizeEndpoint())
-        present(vc, animated: true)
-    }
-    
-    func authorizeEndpoint() -> URL {
-        var cmp = URLComponents()
-        cmp.queryItems = [
-            URLQueryItem(name: "client_id", value: Secrets.GitLab.ClientId),
-            URLQueryItem(name: "redirect_uri", value: Secrets.GitLab.RedirectURI),
-            URLQueryItem(name: "response_type", value: "code"),
-            URLQueryItem(name: "state", value: state.uuidString)
-        ]
-        cmp.host = "www.gitlab.com"
-        cmp.scheme = "https"
-        return cmp.url!
     }
 }
