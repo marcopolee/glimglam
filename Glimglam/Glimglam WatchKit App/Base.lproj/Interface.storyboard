@@ -1,15 +1,138 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Interface Controller-->
+        <!--Please sign in-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="SignInView" title="Please sign in" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Glimglam_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="0Vv-Ll-HO5">
+                            <items>
+                                <label alignment="center" text="⚠️" textAlignment="left" id="c3g-bq-axq">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="48"/>
+                                </label>
+                                <label alignment="center" text="Please sign into GitLab on your iPhone" textAlignment="center" numberOfLines="0" id="dGK-el-5nq"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-62" y="10"/>
+        </scene>
+        <!--Actions-->
+        <scene sceneID="BAL-di-pHf">
+            <objects>
+                <controller identifier="Actions" id="YgF-jf-pdE">
+                    <items>
+                        <button width="1" alignment="left" title="Start Pipeline" id="RcY-U7-JQi">
+                            <connections>
+                                <segue destination="rqM-5o-ZC3" kind="push" id="s0Z-uI-SBN"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Pending" id="RhA-bT-TMf">
+                            <connections>
+                                <segue destination="rqM-5o-ZC3" kind="push" id="bXT-95-s7b"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Running" id="RiH-Ty-SQ4">
+                            <connections>
+                                <segue destination="rqM-5o-ZC3" kind="push" id="03H-0u-P80"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Finished" id="yr6-Nt-pr5">
+                            <connections>
+                                <segue destination="rqM-5o-ZC3" kind="push" id="D3x-Up-KPj"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-62" y="337"/>
+        </scene>
+        <!--Pipelines-->
+        <scene sceneID="cq2-jG-dIH">
+            <objects>
+                <controller identifier="Pipelines" title="Pipelines" id="rqM-5o-ZC3">
+                    <items>
+                        <table alignment="left" id="q9L-ZX-bxk">
+                            <items>
+                                <tableRow id="qGo-3j-3gI">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="68q-Yf-0qR">
+                                        <items>
+                                            <label alignment="left" text="#11223344" id="33e-XY-tFC"/>
+                                            <label alignment="left" text="master 01be04" id="mAR-es-oZD">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                        <connections>
+                                            <segue destination="hoR-CM-Ehz" kind="push" id="uoC-PH-uht"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="221" y="331"/>
+        </scene>
+        <!--Stages-->
+        <scene sceneID="DTn-XI-rhH">
+            <objects>
+                <controller identifier="Stages" title="Stages" id="hoR-CM-Ehz">
+                    <items>
+                        <table alignment="left" id="pdK-tu-BJp">
+                            <items>
+                                <tableRow id="Szn-2J-RzR">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="WGF-Xb-Hn8">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="build_beta" id="j87-Mw-uYd"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="YTZ-8v-PG7" kind="push" id="IbC-WX-RYc"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="490" y="331"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="H1v-Uw-A7X">
+            <objects>
+                <controller id="YTZ-8v-PG7">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="2Aq-PM-Ynt">
+                            <items>
+                                <label alignment="center" text="🚦" textAlignment="center" id="Ixc-yb-0es">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="48"/>
+                                </label>
+                                <label alignment="center" text="Job queued" textAlignment="center" id="lRa-Fd-ID9"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="764" y="331"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D3x-Up-KPj"/>
+    </inferredMetricsTieBreakers>
 </document>
