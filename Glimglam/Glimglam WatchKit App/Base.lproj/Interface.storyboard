@@ -30,7 +30,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-62" y="10"/>
+            <point key="canvasLocation" x="-617" y="4"/>
         </scene>
         <!--Projects-->
         <scene sceneID="URe-BN-0rp">
@@ -39,7 +39,7 @@
                     <items>
                         <table alignment="left" id="c79-3e-mP4">
                             <items>
-                                <tableRow identifier="Project" id="JGG-qt-Dlb">
+                                <tableRow identifier="Project" id="JGG-qt-Dlb" customClass="ProjectRowController" customModule="Glimglam_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="7z2-jJ-8mf">
                                         <items>
                                             <label alignment="left" text="webapp" id="C3N-zq-zpv">
@@ -167,9 +167,41 @@
             </objects>
             <point key="canvasLocation" x="444" y="790"/>
         </scene>
+        <!--Namespaces-->
+        <scene sceneID="mdx-hj-Jgr">
+            <objects>
+                <controller identifier="Namespaces" title="Namespaces" id="Xd2-AU-usf" customClass="NamespacesInterfaceController" customModule="Glimglam_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="bjO-h5-9Se">
+                            <items>
+                                <tableRow identifier="Namespace" id="ZOh-rN-lkh" customClass="NamespaceRowController" customModule="Glimglam_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="2Oa-Or-v08">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="marcopolee" id="uZD-eI-NBe">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                        </items>
+                                        <connections>
+                                            <segue destination="jf4-2f-G6y" kind="push" id="gcu-05-E6a"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="name" destination="uZD-eI-NBe" id="xj3-kE-sjY"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="bjO-h5-9Se" id="ZyG-sH-ucw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-617" y="331"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IbC-WX-RYc"/>
+        <segue reference="VsB-ut-6d7"/>
         <segue reference="D3x-Up-KPj"/>
     </inferredMetricsTieBreakers>
 </document>

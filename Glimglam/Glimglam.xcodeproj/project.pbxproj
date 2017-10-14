@@ -15,6 +15,7 @@
 		8B4395221F926E8100DB8E34 /* ProjectsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */; };
 		8B4395241F926FA300DB8E34 /* InterfaceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395231F926FA300DB8E34 /* InterfaceContext.swift */; };
 		8B4395281F927A0800DB8E34 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395271F9279D300DB8E34 /* WatchBridge.swift */; };
+		8B43B0931F92A00A00427EBA /* NamespacesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43B0921F92A00A00427EBA /* NamespacesInterfaceController.swift */; };
 		8B98A7FF1F8F933700507916 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B98A7FE1F8F933700507916 /* SafariServices.framework */; };
 		8B98A8011F8F9A1E00507916 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8001F8F9A1E00507916 /* Secrets.swift */; };
 		8B9DA7271F90BF66004A239E /* CoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8021F8F9BD200507916 /* CoreContext.swift */; };
@@ -99,6 +100,7 @@
 		8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsInterfaceController.swift; sourceTree = "<group>"; };
 		8B4395231F926FA300DB8E34 /* InterfaceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceContext.swift; sourceTree = "<group>"; };
 		8B4395271F9279D300DB8E34 /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
+		8B43B0921F92A00A00427EBA /* NamespacesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamespacesInterfaceController.swift; sourceTree = "<group>"; };
 		8B98A7FE1F8F933700507916 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		8B98A8001F8F9A1E00507916 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8B98A8021F8F9BD200507916 /* CoreContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreContext.swift; sourceTree = "<group>"; };
@@ -206,12 +208,13 @@
 				8BB2868C1F8F893000C8A90E /* Assets.xcassets */,
 				8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */,
 				8BB2868E1F8F893000C8A90E /* Info.plist */,
-				8B43951D1F92589700DB8E34 /* StagesInterfaceController.swift */,
+				8B4395231F926FA300DB8E34 /* InterfaceContext.swift */,
+				8B43B0921F92A00A00427EBA /* NamespacesInterfaceController.swift */,
 				8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */,
 				8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */,
 				8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */,
 				8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */,
-				8B4395231F926FA300DB8E34 /* InterfaceContext.swift */,
+				8B43951D1F92589700DB8E34 /* StagesInterfaceController.swift */,
 				8B9DA7351F9183F6004A239E /* WatchBridge.swift */,
 			);
 			path = "Glimglam WatchKit Extension";
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9DA72F1F90C89A004A239E /* GitLabAPI.swift in Sources */,
+				8B43B0931F92A00A00427EBA /* NamespacesInterfaceController.swift in Sources */,
 				8B43951C1F92588A00DB8E34 /* PipelinesInterfaceController.swift in Sources */,
 				8B43951A1F92586B00DB8E34 /* ActionsInterfaceController.swift in Sources */,
 				8B4395241F926FA300DB8E34 /* InterfaceContext.swift in Sources */,

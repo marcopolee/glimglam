@@ -10,7 +10,14 @@ import WatchKit
 import Foundation
 
 class ProjectsInterfaceController: WKInterfaceController {
-    var context: InterfaceContext!
+    class Context: InterfaceContext {
+        let namespace: GitLab.Namespace
+        init(context: CoreContext, namespace: GitLab.Namespace) {
+            self.namespace = namespace
+            super.init(context: context)
+        }
+    }
+    var context: Context!
     @IBOutlet var table: WKInterfaceTable!
     
     struct State {
@@ -24,18 +31,24 @@ class ProjectsInterfaceController: WKInterfaceController {
     }
     
     override func awake(withContext context: Any?) {
-        self.context = context as! InterfaceContext
+        self.context = context as! Context
         refreshData()
     }
     
     func refreshData() {
-        GitLab.API().getProjects(accessToken: context.context.gitLabLogin!) { res in
+        let handler: (APIResult<[GitLab.Project]>) -> Void = { res in
             switch res {
             case .Result(let projects):
                 self.state = State(projects: projects)
             case .Error(let errStr):
                 print(errStr) // very sad
             }
+        }
+        switch context.namespace.kind {
+        case .Group:
+            GitLab.API().getGroupProjects(accessToken: context.context.gitLabLogin!, groupId: context.namespace.id, completion: handler)
+        case .User:
+            GitLab.API().getUserProjects(accessToken: context.context.gitLabLogin!, userId: context.namespace.id, completion: handler)
         }
     }
     
@@ -49,7 +62,7 @@ class ProjectsInterfaceController: WKInterfaceController {
     }
 }
 
-class ProjectRowController {
+class ProjectRowController: NSObject {
     var project: GitLab.Project!
     @IBOutlet var name: WKInterfaceLabel!
     @IBOutlet var path: WKInterfaceLabel!
@@ -57,6 +70,6 @@ class ProjectRowController {
     
     func render() {
         name.setText(project.name)
-        path.setText(project.pathWithNamespace)
+        path.setText(project.nameWithNamespace)
     }
 }
