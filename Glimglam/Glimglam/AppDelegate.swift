@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var navigationController: UINavigationController!
+    var watchBridge: WatchBridge!
     let urlHandlers = URLHandlers()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -35,9 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func bootstrapContext() {
         let mainVC = navigationController.viewControllers.first as! ViewController
-        var context = CoreContext()
+        let context = CoreContext()
         context.readFromKeychain()
         mainVC.context = context
+        watchBridge = WatchBridge(context: context)
     }
 }
 

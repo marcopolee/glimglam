@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B4395181F9257F500DB8E34 /* SignInInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */; };
+		8B43951A1F92586B00DB8E34 /* ActionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395191F92586B00DB8E34 /* ActionsInterfaceController.swift */; };
+		8B43951C1F92588A00DB8E34 /* PipelinesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */; };
+		8B43951E1F92589700DB8E34 /* JobsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */; };
+		8B4395201F9258A200DB8E34 /* QueuedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */; };
+		8B4395221F926E8100DB8E34 /* ProjectsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */; };
+		8B4395241F926FA300DB8E34 /* InterfaceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395231F926FA300DB8E34 /* InterfaceContext.swift */; };
+		8B4395281F927A0800DB8E34 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395271F9279D300DB8E34 /* WatchBridge.swift */; };
 		8B98A7FF1F8F933700507916 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B98A7FE1F8F933700507916 /* SafariServices.framework */; };
 		8B98A8011F8F9A1E00507916 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8001F8F9A1E00507916 /* Secrets.swift */; };
 		8B9DA7271F90BF66004A239E /* CoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8021F8F9BD200507916 /* CoreContext.swift */; };
 		8B9DA7281F90BF66004A239E /* CoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8021F8F9BD200507916 /* CoreContext.swift */; };
-		8B9DA7291F90BF68004A239E /* GitLabAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8041F8F9C1300507916 /* GitLabAccessToken.swift */; };
-		8B9DA72A1F90BF69004A239E /* GitLabAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98A8041F8F9C1300507916 /* GitLabAccessToken.swift */; };
 		8B9DA72C1F90C297004A239E /* GitLabAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA72B1F90C297004A239E /* GitLabAuthenticator.swift */; };
 		8B9DA72E1F90C89A004A239E /* GitLabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA72D1F90C89A004A239E /* GitLabAPI.swift */; };
 		8B9DA72F1F90C89A004A239E /* GitLabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA72D1F90C89A004A239E /* GitLabAPI.swift */; };
 		8B9DA7311F90D556004A239E /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA7301F90D556004A239E /* URLHandler.swift */; };
 		8B9DA7321F90D556004A239E /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA7301F90D556004A239E /* URLHandler.swift */; };
+		8B9DA7371F9200B2004A239E /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9DA7351F9183F6004A239E /* WatchBridge.swift */; };
 		8BB286661F8F893000C8A90E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB286651F8F893000C8A90E /* AppDelegate.swift */; };
 		8BB286681F8F893000C8A90E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB286671F8F893000C8A90E /* ViewController.swift */; };
 		8BB2866B1F8F893000C8A90E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB286691F8F893000C8A90E /* Main.storyboard */; };
@@ -27,7 +34,6 @@
 		8BB2867B1F8F893000C8A90E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB286791F8F893000C8A90E /* Interface.storyboard */; };
 		8BB2867D1F8F893000C8A90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2867C1F8F893000C8A90E /* Assets.xcassets */; };
 		8BB286841F8F893000C8A90E /* Glimglam WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BB286831F8F893000C8A90E /* Glimglam WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8BB286891F8F893000C8A90E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB286881F8F893000C8A90E /* InterfaceController.swift */; };
 		8BB2868B1F8F893000C8A90E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */; };
 		8BB2868D1F8F893000C8A90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB2868C1F8F893000C8A90E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -85,13 +91,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInterfaceController.swift; sourceTree = "<group>"; };
+		8B4395191F92586B00DB8E34 /* ActionsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsInterfaceController.swift; sourceTree = "<group>"; };
+		8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelinesInterfaceController.swift; sourceTree = "<group>"; };
+		8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsInterfaceController.swift; sourceTree = "<group>"; };
+		8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedInterfaceController.swift; sourceTree = "<group>"; };
+		8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsInterfaceController.swift; sourceTree = "<group>"; };
+		8B4395231F926FA300DB8E34 /* InterfaceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceContext.swift; sourceTree = "<group>"; };
+		8B4395271F9279D300DB8E34 /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
 		8B98A7FE1F8F933700507916 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		8B98A8001F8F9A1E00507916 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8B98A8021F8F9BD200507916 /* CoreContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreContext.swift; sourceTree = "<group>"; };
-		8B98A8041F8F9C1300507916 /* GitLabAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLabAccessToken.swift; sourceTree = "<group>"; };
 		8B9DA72B1F90C297004A239E /* GitLabAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLabAuthenticator.swift; sourceTree = "<group>"; };
 		8B9DA72D1F90C89A004A239E /* GitLabAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLabAPI.swift; sourceTree = "<group>"; };
 		8B9DA7301F90D556004A239E /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		8B9DA7351F9183F6004A239E /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
 		8BB286621F8F893000C8A90E /* Glimglam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glimglam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB286651F8F893000C8A90E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB286671F8F893000C8A90E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +118,6 @@
 		8BB2867C1F8F893000C8A90E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB2867E1F8F893000C8A90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB286831F8F893000C8A90E /* Glimglam WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Glimglam WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BB286881F8F893000C8A90E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		8BB2868C1F8F893000C8A90E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB2868E1F8F893000C8A90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,14 +176,15 @@
 			isa = PBXGroup;
 			children = (
 				8BB286651F8F893000C8A90E /* AppDelegate.swift */,
+				8BB2866C1F8F893000C8A90E /* Assets.xcassets */,
+				8B9DA72B1F90C297004A239E /* GitLabAuthenticator.swift */,
+				8BB286711F8F893000C8A90E /* Info.plist */,
+				8BB2866E1F8F893000C8A90E /* LaunchScreen.storyboard */,
+				8BB286691F8F893000C8A90E /* Main.storyboard */,
+				8B98A8001F8F9A1E00507916 /* Secrets.swift */,
 				8B9DA7301F90D556004A239E /* URLHandler.swift */,
 				8BB286671F8F893000C8A90E /* ViewController.swift */,
-				8B9DA72B1F90C297004A239E /* GitLabAuthenticator.swift */,
-				8B98A8001F8F9A1E00507916 /* Secrets.swift */,
-				8BB286691F8F893000C8A90E /* Main.storyboard */,
-				8BB2866C1F8F893000C8A90E /* Assets.xcassets */,
-				8BB2866E1F8F893000C8A90E /* LaunchScreen.storyboard */,
-				8BB286711F8F893000C8A90E /* Info.plist */,
+				8B4395271F9279D300DB8E34 /* WatchBridge.swift */,
 			);
 			path = Glimglam;
 			sourceTree = "<group>";
@@ -188,10 +202,17 @@
 		8BB286871F8F893000C8A90E /* Glimglam WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8BB286881F8F893000C8A90E /* InterfaceController.swift */,
-				8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */,
+				8B4395191F92586B00DB8E34 /* ActionsInterfaceController.swift */,
 				8BB2868C1F8F893000C8A90E /* Assets.xcassets */,
+				8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */,
 				8BB2868E1F8F893000C8A90E /* Info.plist */,
+				8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */,
+				8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */,
+				8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */,
+				8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */,
+				8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */,
+				8B4395231F926FA300DB8E34 /* InterfaceContext.swift */,
+				8B9DA7351F9183F6004A239E /* WatchBridge.swift */,
 			);
 			path = "Glimglam WatchKit Extension";
 			sourceTree = "<group>";
@@ -200,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				8B98A8021F8F9BD200507916 /* CoreContext.swift */,
-				8B98A8041F8F9C1300507916 /* GitLabAccessToken.swift */,
 				8B9DA72D1F90C89A004A239E /* GitLabAPI.swift */,
 			);
 			path = GlimglamCore;
@@ -342,10 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4395281F927A0800DB8E34 /* WatchBridge.swift in Sources */,
 				8B9DA72C1F90C297004A239E /* GitLabAuthenticator.swift in Sources */,
 				8BB286681F8F893000C8A90E /* ViewController.swift in Sources */,
 				8B98A8011F8F9A1E00507916 /* Secrets.swift in Sources */,
-				8B9DA7291F90BF68004A239E /* GitLabAccessToken.swift in Sources */,
 				8B9DA7311F90D556004A239E /* URLHandler.swift in Sources */,
 				8B9DA7271F90BF66004A239E /* CoreContext.swift in Sources */,
 				8BB286661F8F893000C8A90E /* AppDelegate.swift in Sources */,
@@ -358,11 +378,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9DA72F1F90C89A004A239E /* GitLabAPI.swift in Sources */,
-				8B9DA72A1F90BF69004A239E /* GitLabAccessToken.swift in Sources */,
+				8B43951C1F92588A00DB8E34 /* PipelinesInterfaceController.swift in Sources */,
+				8B43951A1F92586B00DB8E34 /* ActionsInterfaceController.swift in Sources */,
+				8B4395241F926FA300DB8E34 /* InterfaceContext.swift in Sources */,
 				8B9DA7321F90D556004A239E /* URLHandler.swift in Sources */,
+				8B4395221F926E8100DB8E34 /* ProjectsInterfaceController.swift in Sources */,
+				8B9DA7371F9200B2004A239E /* WatchBridge.swift in Sources */,
 				8BB2868B1F8F893000C8A90E /* ExtensionDelegate.swift in Sources */,
+				8B4395201F9258A200DB8E34 /* QueuedInterfaceController.swift in Sources */,
 				8B9DA7281F90BF66004A239E /* CoreContext.swift in Sources */,
-				8BB286891F8F893000C8A90E /* InterfaceController.swift in Sources */,
+				8B4395181F9257F500DB8E34 /* SignInInterfaceController.swift in Sources */,
+				8B43951E1F92589700DB8E34 /* JobsInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

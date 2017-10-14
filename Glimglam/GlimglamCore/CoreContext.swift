@@ -10,10 +10,18 @@ import Foundation
 
 let gitLabAccessTokenService = "com.marcopolee.Glimglam.GitLabAccessToken"
 
-public struct CoreContext: Codable {
-    public var gitLabLogin: GitLabAccessToken?
+public extension Notification.Name {
+    public static let coreContextUpdate = Notification.Name("CoreContextUpdate")
+}
+
+public class CoreContext: Codable {
+    public var gitLabLogin: GitLab.AccessToken? {
+        didSet {
+            NotificationCenter.default.post(name: .coreContextUpdate, object: self)
+        }
+    }
     
-    public mutating func readFromKeychain() {
+    public func readFromKeychain() {
         let query: [CFString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: gitLabAccessTokenService as CFString,
@@ -24,7 +32,7 @@ public struct CoreContext: Codable {
         SecItemCopyMatching(query as CFDictionary, &maybeResult)
         guard let result = maybeResult,
             let data = result as? Data,
-            let token = try? JSONDecoder().decode(GitLabAccessToken.self, from: data) else {
+            let token = try? JSONDecoder().decode(GitLab.AccessToken.self, from: data) else {
             return
         }
         gitLabLogin = token

@@ -17,7 +17,7 @@
         <!--Please sign in-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="SignInView" title="Please sign in" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Glimglam_WatchKit_App" customModuleProvider="target">
+                <controller identifier="SignIn" title="Please sign in" id="AgC-eL-Hgc" customClass="SignInInterfaceController" customModule="Glimglam_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="0Vv-Ll-HO5">
                             <items>
@@ -32,29 +32,50 @@
             </objects>
             <point key="canvasLocation" x="-62" y="10"/>
         </scene>
+        <!--Projects-->
+        <scene sceneID="URe-BN-0rp">
+            <objects>
+                <controller identifier="Projects" id="jf4-2f-G6y" customClass="ProjectsInterfaceController" customModule="Glimglam_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="c79-3e-mP4">
+                            <items>
+                                <tableRow id="JGG-qt-Dlb">
+                                    <group key="rootItem" width="1" alignment="left" id="7z2-jJ-8mf">
+                                        <connections>
+                                            <segue destination="YgF-jf-pdE" kind="push" id="YWQ-1U-c5m"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-338" y="331"/>
+        </scene>
         <!--Actions-->
         <scene sceneID="BAL-di-pHf">
             <objects>
-                <controller identifier="Actions" id="YgF-jf-pdE">
+                <controller identifier="Actions" id="YgF-jf-pdE" customClass="ActionsInterfaceController" customModule="Glimglam_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Start Pipeline" id="RcY-U7-JQi">
                             <connections>
-                                <segue destination="rqM-5o-ZC3" kind="push" id="s0Z-uI-SBN"/>
+                                <segue destination="YTZ-8v-PG7" kind="push" identifier="PushStartPipeline" id="VsB-ut-6d7"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Pending" id="RhA-bT-TMf">
                             <connections>
-                                <segue destination="rqM-5o-ZC3" kind="push" id="bXT-95-s7b"/>
+                                <segue destination="rqM-5o-ZC3" kind="push" identifier="PushPending" id="bXT-95-s7b"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Running" id="RiH-Ty-SQ4">
                             <connections>
-                                <segue destination="rqM-5o-ZC3" kind="push" id="03H-0u-P80"/>
+                                <segue destination="rqM-5o-ZC3" kind="push" identifier="PushRunning" id="03H-0u-P80"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Finished" id="yr6-Nt-pr5">
                             <connections>
-                                <segue destination="rqM-5o-ZC3" kind="push" id="D3x-Up-KPj"/>
+                                <segue destination="rqM-5o-ZC3" kind="push" identifier="PushFinished" id="D3x-Up-KPj"/>
                             </connections>
                         </button>
                     </items>
@@ -65,7 +86,7 @@
         <!--Pipelines-->
         <scene sceneID="cq2-jG-dIH">
             <objects>
-                <controller identifier="Pipelines" title="Pipelines" id="rqM-5o-ZC3">
+                <controller identifier="Pipelines" title="Pipelines" id="rqM-5o-ZC3" customClass="PipelinesInterfaceController" customModule="Glimglam_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="q9L-ZX-bxk">
                             <items>
@@ -92,7 +113,7 @@
         <!--Stages-->
         <scene sceneID="DTn-XI-rhH">
             <objects>
-                <controller identifier="Stages" title="Stages" id="hoR-CM-Ehz">
+                <controller identifier="Stages" title="Stages" id="hoR-CM-Ehz" customClass="StagesInterfaceController" customModule="Glimglam_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="pdK-tu-BJp">
                             <items>
@@ -113,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="490" y="331"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Queued-->
         <scene sceneID="H1v-Uw-A7X">
             <objects>
-                <controller id="YTZ-8v-PG7">
+                <controller identifier="Queued" id="YTZ-8v-PG7" customClass="QueuedInterfaceController" customModule="Glimglam_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" layout="vertical" id="2Aq-PM-Ynt">
                             <items>
@@ -129,10 +150,11 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="764" y="331"/>
+            <point key="canvasLocation" x="444" y="790"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="IbC-WX-RYc"/>
         <segue reference="D3x-Up-KPj"/>
     </inferredMetricsTieBreakers>
 </document>

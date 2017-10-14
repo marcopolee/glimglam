@@ -10,8 +10,38 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    var context: CoreContext!
+    class var shared: ExtensionDelegate {
+        return WKExtension.shared().delegate as! ExtensionDelegate
+    }
+    
+    struct State {
+        var loggedIn = false
+    }
+    
+    var state = State()
+    var watchBridge: WatchBridge!
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        context = CoreContext()
+        context.readFromKeychain()
+        watchBridge = WatchBridge(context: context)
+        NotificationCenter.default.addObserver(forName: .coreContextUpdate, object: nil, queue: OperationQueue.main) { [weak self] notification in
+            self?.reloadRoots()
+        }
+    }
+    
+    // Calling this will reset the UI
+    func reloadRoots() {
+        if state.loggedIn && context.gitLabLogin == nil {
+            // was logged in, now not
+            state.loggedIn = false
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "SignIn", context: context)])
+        } else if !state.loggedIn && context.gitLabLogin != nil {
+            state.loggedIn = true
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "Projects", context: context)])
+        }
     }
 
     func applicationDidBecomeActive() {

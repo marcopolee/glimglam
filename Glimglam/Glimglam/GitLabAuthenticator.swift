@@ -25,7 +25,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
     let id = UUID()
     var stateChangeHandler: (() -> Void)?
     var error: String?
-    var accessToken: GitLabAccessToken?
+    var accessToken: GitLab.AccessToken?
     var state = State.Ready {
         didSet {
             DispatchQueue.main.async {
@@ -75,7 +75,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
             return fail(message: "Invalid response from GitLab")
         }
         if query["state"] != id.uuidString {
-            return fail(message: "Invalid repsonse from GitLab")
+            return fail(message: "Invalid response from GitLab")
         }
         guard let code = query["code"] else {
             return fail(message: "Missing access code from GitLab")
@@ -90,7 +90,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
             return
         }
         state = .RequestingToken
-        let api = GitLabAPI()
+        let api = GitLab.API()
         api.postOAuthToken(clientId: Secrets.GitLab.ClientId, clientSecret: Secrets.GitLab.ApplicationSecret, code: code, grantType: "authorization_code", redirectURI: Secrets.GitLab.RedirectURI) { result in
             switch result {
             case .Error(let errStr):
