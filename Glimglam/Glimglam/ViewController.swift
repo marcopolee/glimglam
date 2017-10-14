@@ -43,6 +43,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             print("Logged in and got token! Auth Token = \(auth.accessToken!.accessToken)")
             print(try! JSONEncoder().encode(auth.accessToken))
             context.gitLabLogin = auth.accessToken
+            context.user = auth.user
             context.storeInKeychain()
         default:
             break

@@ -40,7 +40,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "SignIn", context: context)])
         } else if !state.loggedIn && context.gitLabLogin != nil {
             state.loggedIn = true
-            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "Projects", context: context)])
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "Projects", context: InterfaceContext(context: context))])
         }
     }
 

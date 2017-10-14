@@ -32,11 +32,12 @@ class WatchBridge: NSObject, WCSessionDelegate {
         switch type {
         case .GitLabLogin:
             guard let data = try? JSONSerialization.data(withJSONObject: object, options: []),
-                let login = try? JSONDecoder().decode(GitLab.AccessToken.self, from: data) else {
+                let newContext = try? JSONDecoder().decode(CoreContext.self, from: data) else {
                     print("unrecognized message structure: likely programmer derp")
                     return
             }
-            context.gitLabLogin = login
+            context.gitLabLogin = newContext.gitLabLogin
+            context.user = newContext.user
             context.storeInKeychain()
         }
     }

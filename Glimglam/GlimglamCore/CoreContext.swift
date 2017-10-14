@@ -14,10 +14,18 @@ public extension Notification.Name {
     public static let coreContextUpdate = Notification.Name("CoreContextUpdate")
 }
 
+private let notificationQueue = NotificationQueue(notificationCenter: NotificationCenter.default)
+
 public class CoreContext: Codable {
+    
     public var gitLabLogin: GitLab.AccessToken? {
         didSet {
-            NotificationCenter.default.post(name: .coreContextUpdate, object: self)
+            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
+        }
+    }
+    public var user: GitLab.User? {
+        didSet {
+            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
         }
     }
     
@@ -31,18 +39,19 @@ public class CoreContext: Codable {
         var maybeResult: CFTypeRef?
         SecItemCopyMatching(query as CFDictionary, &maybeResult)
         guard let result = maybeResult,
-            let data = result as? Data,
-            let token = try? JSONDecoder().decode(GitLab.AccessToken.self, from: data) else {
+            let data = result as? Data else {
+                return
+        }
+        guard let newContext = try? JSONDecoder().decode(CoreContext.self, from: data) else {
+            deletThis()
             return
         }
-        gitLabLogin = token
+        gitLabLogin = newContext.gitLabLogin
+        user = newContext.user
     }
     
     public func storeInKeychain() {
-        guard let gitLabLogin = gitLabLogin else {
-            return
-        }
-        guard let json = try? JSONEncoder().encode(gitLabLogin) else {
+        guard let json = try? JSONEncoder().encode(self) else {
             return
         }
         var query: [CFString: Any] = [
@@ -50,7 +59,7 @@ public class CoreContext: Codable {
             kSecAttrService: gitLabAccessTokenService as CFString,
             kSecValueData: json as CFData
         ]
-        #if !TARGET_IPHONE_SIMULATOR
+        #if !TARGET_SIMULATOR
             query[kSecAttrAccessGroup] = kSecAttrAccessibleWhenUnlocked
         #endif
         
@@ -64,5 +73,13 @@ public class CoreContext: Codable {
         default:
             return
         }
+    }
+    
+    public func deletThis() {
+        let query: [CFString: Any] = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrService: gitLabAccessTokenService as CFString
+        ]
+        SecItemDelete(query as CFDictionary)
     }
 }

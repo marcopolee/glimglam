@@ -28,26 +28,6 @@ class WatchBridge: NSObject, WCSessionDelegate {
         
     }
     
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        print("received message (\(userInfo["type"] ?? "invalid message"))")
-        guard let typeStr = userInfo["type"] as? String,
-            let type = Message(rawValue: typeStr),
-            let object = userInfo["object"] as? [String: Any] else {
-            print("unrecognized message type: version mismatch maybe?")
-            return
-        }
-        
-        switch type {
-        case .GitLabLogin:
-            guard let data = try? JSONSerialization.data(withJSONObject: object, options: []),
-                let login = try? JSONDecoder().decode(GitLab.AccessToken.self, from: data) else {
-                    print("unrecognized message structure: likely programmer derp")
-                    return
-            }
-            context.gitLabLogin = login
-        }
-    }
-    
     let context: CoreContext
     let session: WCSession
     init(context: CoreContext) {
@@ -62,7 +42,7 @@ class WatchBridge: NSObject, WCSessionDelegate {
         if !session.isWatchAppInstalled || session.activationState != .activated {
             return
         }
-        guard let data = try? JSONEncoder().encode(context.gitLabLogin) else {
+        guard let data = try? JSONEncoder().encode(context) else {
             return
         }
         guard let userInfo = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any] else {

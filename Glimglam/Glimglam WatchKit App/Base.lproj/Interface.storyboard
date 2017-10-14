@@ -39,16 +39,31 @@
                     <items>
                         <table alignment="left" id="c79-3e-mP4">
                             <items>
-                                <tableRow id="JGG-qt-Dlb">
-                                    <group key="rootItem" width="1" alignment="left" id="7z2-jJ-8mf">
+                                <tableRow identifier="Project" id="JGG-qt-Dlb">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="7z2-jJ-8mf">
+                                        <items>
+                                            <label alignment="left" text="webapp" id="C3N-zq-zpv">
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                            <label alignment="left" text="marcopolee / webapp" id="rVe-7D-Q3Q">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
                                         <connections>
                                             <segue destination="YgF-jf-pdE" kind="push" id="YWQ-1U-c5m"/>
                                         </connections>
                                     </group>
+                                    <connections>
+                                        <outlet property="name" destination="C3N-zq-zpv" id="QfO-GS-8lS"/>
+                                        <outlet property="path" destination="rVe-7D-Q3Q" id="7he-Ba-seP"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="c79-3e-mP4" id="7pF-7b-VcN"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-338" y="331"/>

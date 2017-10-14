@@ -14,6 +14,12 @@ public enum APIResult<T> {
 }
 
 public enum GitLab {
+    public struct User: Codable {
+        public let id: UInt64
+        public let username: String
+        public let name: String
+    }
+    
     public struct Project: Codable {
         public let id: UInt64
         public let description: String?
@@ -65,10 +71,13 @@ public enum GitLab {
     
     public class API {
         private func loggedInRequest(accessToken: AccessToken, path: String, queryParams: [String: String] = [:]) -> URLRequest {
-            var cmp = URLComponents(string: "https://gitlab.com\(path)")!
-            cmp.queryItems = queryParams.map{ URLQueryItem(name: $0.key, value: $0.value) }
+            var cmp = URLComponents(string: "https://gitlab.com/api/v4\(path)")!
+            if queryParams.count > 0 {
+                cmp.queryItems = queryParams.map{ URLQueryItem(name: $0.key, value: $0.value) }
+            }
             var urlReq = URLRequest(url: cmp.url!)
             urlReq.httpMethod = "GET"
+            urlReq.addValue("Bearer \(accessToken.accessToken)", forHTTPHeaderField: "Authorization")
             return urlReq
         }
         
@@ -111,12 +120,17 @@ public enum GitLab {
             executeAPI(urlRequest: urlReq, completion: completion)
         }
         
-        public func getProjects(accessToken: AccessToken, completion: @escaping ((APIResult<Project>) -> Void)) {
+        public func getUser(accessToken: AccessToken, completion: @escaping ((APIResult<User>) -> Void)) {
+            let urlReq = loggedInRequest(accessToken: accessToken, path: "/user")
+            executeAPI(urlRequest: urlReq, completion: completion)
+        }
+        
+        public func getProjects(accessToken: AccessToken, completion: @escaping ((APIResult<[Project]>) -> Void)) {
             let urlReq = loggedInRequest(accessToken: accessToken, path: "/projects")
             executeAPI(urlRequest: urlReq, completion: completion)
         }
         
-        public func getProjectPipelines(accessToken: AccessToken, project: Project, status: Pipeline.Status, completion: @escaping ((APIResult<Pipeline>) -> Void)) {
+        public func getProjectPipelines(accessToken: AccessToken, project: Project, status: Pipeline.Status, completion: @escaping ((APIResult<[Pipeline]>) -> Void)) {
             let urlReq = loggedInRequest(accessToken: accessToken, path: "/projects/\(project.id)/pipelines", queryParams: ["status": status.rawValue])
             executeAPI(urlRequest: urlReq, completion: completion)
         }

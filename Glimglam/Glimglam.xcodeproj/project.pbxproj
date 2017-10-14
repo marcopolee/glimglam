@@ -10,7 +10,7 @@
 		8B4395181F9257F500DB8E34 /* SignInInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */; };
 		8B43951A1F92586B00DB8E34 /* ActionsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395191F92586B00DB8E34 /* ActionsInterfaceController.swift */; };
 		8B43951C1F92588A00DB8E34 /* PipelinesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */; };
-		8B43951E1F92589700DB8E34 /* JobsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */; };
+		8B43951E1F92589700DB8E34 /* StagesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951D1F92589700DB8E34 /* StagesInterfaceController.swift */; };
 		8B4395201F9258A200DB8E34 /* QueuedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */; };
 		8B4395221F926E8100DB8E34 /* ProjectsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */; };
 		8B4395241F926FA300DB8E34 /* InterfaceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4395231F926FA300DB8E34 /* InterfaceContext.swift */; };
@@ -94,7 +94,7 @@
 		8B4395171F9257F500DB8E34 /* SignInInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInterfaceController.swift; sourceTree = "<group>"; };
 		8B4395191F92586B00DB8E34 /* ActionsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsInterfaceController.swift; sourceTree = "<group>"; };
 		8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelinesInterfaceController.swift; sourceTree = "<group>"; };
-		8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsInterfaceController.swift; sourceTree = "<group>"; };
+		8B43951D1F92589700DB8E34 /* StagesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesInterfaceController.swift; sourceTree = "<group>"; };
 		8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedInterfaceController.swift; sourceTree = "<group>"; };
 		8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsInterfaceController.swift; sourceTree = "<group>"; };
 		8B4395231F926FA300DB8E34 /* InterfaceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceContext.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 				8BB2868C1F8F893000C8A90E /* Assets.xcassets */,
 				8BB2868A1F8F893000C8A90E /* ExtensionDelegate.swift */,
 				8BB2868E1F8F893000C8A90E /* Info.plist */,
-				8B43951D1F92589700DB8E34 /* JobsInterfaceController.swift */,
+				8B43951D1F92589700DB8E34 /* StagesInterfaceController.swift */,
 				8B43951B1F92588A00DB8E34 /* PipelinesInterfaceController.swift */,
 				8B4395211F926E8100DB8E34 /* ProjectsInterfaceController.swift */,
 				8B43951F1F9258A200DB8E34 /* QueuedInterfaceController.swift */,
@@ -388,7 +388,7 @@
 				8B4395201F9258A200DB8E34 /* QueuedInterfaceController.swift in Sources */,
 				8B9DA7281F90BF66004A239E /* CoreContext.swift in Sources */,
 				8B4395181F9257F500DB8E34 /* SignInInterfaceController.swift in Sources */,
-				8B43951E1F92589700DB8E34 /* JobsInterfaceController.swift in Sources */,
+				8B43951E1F92589700DB8E34 /* StagesInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +550,7 @@
 				DEVELOPMENT_TEAM = E7NXDX263P;
 				INFOPLIST_FILE = "Glimglam WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				"OTHER_SWIFT_FLAGS[sdk=watchsimulator*]" = "-D TARGET_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.Glimglam.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -568,6 +569,7 @@
 				DEVELOPMENT_TEAM = E7NXDX263P;
 				INFOPLIST_FILE = "Glimglam WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				"OTHER_SWIFT_FLAGS[sdk=watchsimulator*]" = "-D TARGET_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.Glimglam.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -624,7 +626,7 @@
 				DEVELOPMENT_TEAM = E7NXDX263P;
 				INFOPLIST_FILE = Glimglam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D TARGET_IPHONE_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D TARGET_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.Glimglam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -640,7 +642,7 @@
 				DEVELOPMENT_TEAM = E7NXDX263P;
 				INFOPLIST_FILE = Glimglam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D TARGET_IPHONE_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D TARGET_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcopolee.Glimglam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

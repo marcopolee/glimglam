@@ -15,6 +15,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
         case Ready
         case WaitingForSignin
         case RequestingToken
+        case RequestingUser
         case Finished
         case Failed
     }
@@ -26,6 +27,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
     var stateChangeHandler: (() -> Void)?
     var error: String?
     var accessToken: GitLab.AccessToken?
+    var user: GitLab.User?
     var state = State.Ready {
         didSet {
             DispatchQueue.main.async {
@@ -82,7 +84,7 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
         }
         requestAccessToken(code: code)
         
-        return fail()
+        return true
     }
     
     func requestAccessToken(code: String) {
@@ -98,6 +100,25 @@ class GitLabAuthenticator: NSObject, SFSafariViewControllerDelegate, URLHandler 
                 self.fail(message: errStr)
             case .Result(let res):
                 self.accessToken = res
+                self.requestUser()
+            }
+        }
+    }
+    
+    func requestUser() {
+        guard state == .RequestingToken,
+            let token = accessToken else {
+                self.fail(message: "Something's gone horribly wrong")
+                return
+        }
+        state = .RequestingUser
+        GitLab.API().getUser(accessToken: token) { result in
+            switch result {
+            case .Error(let errStr):
+                print(errStr)
+                self.fail(message: errStr)
+            case .Result(let res):
+                self.user = res
                 self.state = .Finished
             }
         }
