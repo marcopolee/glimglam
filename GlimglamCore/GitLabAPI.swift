@@ -82,6 +82,23 @@ public enum GitLab {
         public let sha: String?
     }
     
+    public struct Job: Codable {
+        public enum Status: String, Codable {
+            case Created = "created"
+            case Pending = "pending"
+            case Running = "running"
+            case Failed = "failed"
+            case Success = "success"
+            case Canceled = "canceled"
+            case Skipped = "skipped"
+            case Manual = "manual"
+        }
+        public let id: UInt64
+        public let status: Status
+        public let name: String
+        public let stage: String
+    }
+    
     public struct AccessToken: Codable {
         public let accessToken: String
         public let tokenType: String
@@ -175,8 +192,13 @@ public enum GitLab {
             executeAPI(urlRequest: urlReq, completion: completion)
         }
         
-        public func getProjectPipelines(accessToken: AccessToken, project: Project, status: Pipeline.Status, completion: @escaping ((APIResult<[Pipeline]>) -> Void)) {
-            let urlReq = loggedInRequest(accessToken: accessToken, path: "/projects/\(project.id)/pipelines", queryParams: ["status": status.rawValue])
+        public func getProjectPipelines(accessToken: AccessToken, project: Project, completion: @escaping ((APIResult<[Pipeline]>) -> Void)) {
+            let urlReq = loggedInRequest(accessToken: accessToken, path: "/projects/\(project.id)/pipelines")
+            executeAPI(urlRequest: urlReq, completion: completion)
+        }
+        
+        public func getProjectPipelineJobs(accessToken: AccessToken, projectId: UInt64, pipelineId: UInt64, completion: @escaping ((APIResult<[Job]>) -> Void)) {
+            let urlReq = loggedInRequest(accessToken: accessToken, path: "/projects/\(projectId)/pipelines/\(pipelineId)/jobs")
             executeAPI(urlRequest: urlReq, completion: completion)
         }
     }

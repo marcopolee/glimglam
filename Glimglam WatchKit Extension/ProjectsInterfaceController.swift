@@ -60,6 +60,12 @@ class ProjectsInterfaceController: WKInterfaceController {
             row.render()
         }
     }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        let project = state.projects[rowIndex]
+        let context = ActionsInterfaceController.Context(context: self.context.context, project: project)
+        return context
+    }
 }
 
 class ProjectRowController: NSObject {

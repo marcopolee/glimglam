@@ -20,12 +20,14 @@ public class CoreContext: Codable {
     
     public var gitLabLogin: GitLab.AccessToken? {
         didSet {
-            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
+//            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
+            NotificationCenter.default.post(name: .coreContextUpdate, object: nil)
         }
     }
     public var user: GitLab.User? {
         didSet {
-            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
+//            notificationQueue.enqueue(Notification(name: .coreContextUpdate), postingStyle: .whenIdle, coalesceMask: .onName, forModes: nil)
+            NotificationCenter.default.post(name: .coreContextUpdate, object: nil)
         }
     }
     
@@ -48,6 +50,7 @@ public class CoreContext: Codable {
         }
         gitLabLogin = newContext.gitLabLogin
         user = newContext.user
+        print("\(gitLabLogin!.accessToken)")
     }
     
     public func storeInKeychain() {

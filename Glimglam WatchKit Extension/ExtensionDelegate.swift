@@ -30,10 +30,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         NotificationCenter.default.addObserver(forName: .coreContextUpdate, object: nil, queue: OperationQueue.main) { [weak self] notification in
             self?.reloadRoots()
         }
+        reloadRoots()
     }
     
     // Calling this will reset the UI
     func reloadRoots() {
+        print("context changed previous state = \(state.loggedIn) new login = \(String(describing: context.gitLabLogin))")
         if state.loggedIn && context.gitLabLogin == nil {
             // was logged in, now not
             state.loggedIn = false

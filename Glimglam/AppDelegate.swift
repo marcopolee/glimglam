@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GlimglamCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

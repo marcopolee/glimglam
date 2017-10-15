@@ -105,7 +105,7 @@
                     <items>
                         <table alignment="left" id="q9L-ZX-bxk">
                             <items>
-                                <tableRow id="qGo-3j-3gI">
+                                <tableRow id="qGo-3j-3gI" customClass="PipelineRowController" customModule="Glimglam_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="68q-Yf-0qR">
                                         <items>
                                             <label alignment="left" text="#11223344" id="33e-XY-tFC"/>
@@ -117,10 +117,17 @@
                                             <segue destination="hoR-CM-Ehz" kind="push" id="uoC-PH-uht"/>
                                         </connections>
                                     </group>
+                                    <connections>
+                                        <outlet property="descriptionLabel" destination="mAR-es-oZD" id="Cl3-uD-YPG"/>
+                                        <outlet property="name" destination="33e-XY-tFC" id="A6f-Oh-bZ6"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="q9L-ZX-bxk" id="lQN-sW-S08"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="221" y="331"/>
@@ -132,19 +139,32 @@
                     <items>
                         <table alignment="left" id="pdK-tu-BJp">
                             <items>
-                                <tableRow id="Szn-2J-RzR">
-                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="WGF-Xb-Hn8">
+                                <tableRow identifier="Job" id="Szn-2J-RzR" customClass="StagesRowController" customModule="Glimglam_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="WGF-Xb-Hn8">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="build_beta" id="j87-Mw-uYd"/>
+                                            <label alignment="left" text="Deploy" id="mh3-WJ-Pd4"/>
+                                            <label alignment="left" text="deploy_beta" id="Yv4-7y-WeS">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                            <label alignment="left" text="Success" id="fKj-Or-myX">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
                                         </items>
                                         <connections>
                                             <segue destination="YTZ-8v-PG7" kind="push" id="IbC-WX-RYc"/>
                                         </connections>
                                     </group>
+                                    <connections>
+                                        <outlet property="descriptionLabel" destination="mh3-WJ-Pd4" id="0i6-Tj-OZL"/>
+                                        <outlet property="name" destination="Yv4-7y-WeS" id="Bjl-YT-YYy"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="pdK-tu-BJp" id="uLC-cO-7aL"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="490" y="331"/>
@@ -201,7 +221,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VsB-ut-6d7"/>
+        <segue reference="IbC-WX-RYc"/>
         <segue reference="D3x-Up-KPj"/>
     </inferredMetricsTieBreakers>
 </document>

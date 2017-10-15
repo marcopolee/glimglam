@@ -11,7 +11,11 @@ import Foundation
 
 class ActionsInterfaceController: WKInterfaceController {
     class Context: InterfaceContext {
-        
+        let project: GitLab.Project
+        init(context: CoreContext, project: GitLab.Project) {
+            self.project = project
+            super.init(context: context)
+        }
     }
     var context: Context!
     
@@ -22,11 +26,11 @@ class ActionsInterfaceController: WKInterfaceController {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch segueIdentifier {
         case "PushPending":
-            return PipelinesInterfaceController.Context(context: context.context, filter: .Pending)
+            return PipelinesInterfaceController.Context(context: context.context, filter: .Pending, project: context.project)
         case "PushRunning":
-            return PipelinesInterfaceController.Context(context: context.context, filter: .Running)
+            return PipelinesInterfaceController.Context(context: context.context, filter: .Running, project: context.project)
         case "PushFinished":
-            return PipelinesInterfaceController.Context(context: context.context, filter: .Finished)
+            return PipelinesInterfaceController.Context(context: context.context, filter: .Finished, project: context.project)
         default:
             return nil
         }

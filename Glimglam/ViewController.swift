@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GlimglamCore
 import SafariServices
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
